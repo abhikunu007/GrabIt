@@ -16,7 +16,7 @@ export default function Navbar() {
         <Link className="nav-link " aria-current="page" to="/">Home</Link>
        <div className="navauth">
        <Link className="nav-link auth " to="/login">Login</Link>
-        <Link className="nav-link auth" to="/signup">Sign up</Link>
+        <Link className="nav-link auth" to="/signup">Sign Up</Link>
        </div>
       </div>
     </div>
