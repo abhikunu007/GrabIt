@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://Abhi:Abhi%40mongo@cluster0.raimtq9.mongodb.net/grabit?retryWrites=true&w=majority'
+const mongoURI = 'mongodb+srv://Abhi:<password>@cluster0.raimtq9.mongodb.net/grabit?retryWrites=true&w=majority'
 
 const mongoDB = () => {
     mongoose.connect(mongoURI, {useNewUrlParser: true})
