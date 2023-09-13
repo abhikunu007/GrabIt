@@ -16,12 +16,12 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/signup", {
+    const res = await fetch("http://localhost:5000/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body:JSON.stringify({name:user.name, email:user.email, password:user.password,location:user.location}),
+      body:JSON.stringify({ email:user.email, password:user.password}),
     });
 
     const json = await res.json()
@@ -39,7 +39,7 @@ export default function Login() {
     // })
     if(json.success)
     {
-      navigate("/login");
+      navigate("/");
     }
   };
 
