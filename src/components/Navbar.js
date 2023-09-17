@@ -1,24 +1,41 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../styles/Navbar.css'
 
 export default function Navbar() {
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  }
+
+
+
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
+  <div className="container-fluid mb-1 mt-1">
     <Link className="navbar-brand" to="/">GrabIt</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div className="navbar-nav"> 
-        <Link className="nav-link " aria-current="page" to="/">Home</Link>
-       <div className="navauth">
-       <Link className="nav-link auth " to="/login">Login</Link>
-        <Link className="nav-link auth" to="/signup">Sign Up</Link>
-       </div>
-      </div>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="navbar-nav me-auto"> 
+        <Link className="nav-link active " aria-current="page" to="/">Home</Link>
+        </div>
+
+       {(!localStorage.getItem("authToken")) ?
+          <div className="d-flex">
+          <Link className="btn authnav text-center" to="/login">Login</Link>
+          <Link className="btn authnav text-center" to="/signup">Sign Up</Link>
+          </div>
+          :
+          <div>
+            <div className='btn authnav' onClick={handleLogout}>Logout</div>
+          </div>
+        }
+     
     </div>
   </div>
 </nav>
