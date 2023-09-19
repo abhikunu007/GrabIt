@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import "../styles/Signup.css";
+import '../styles/Signup.css'
 
 export default function Signup() {
   const [user, setUser] = useState({
@@ -36,8 +36,10 @@ export default function Signup() {
     // password: "",
     // location: "",
     // })
-    navigate("/login");
-
+    if(json.success)
+    {
+      navigate("/login");
+    }
   };
 
   const onChange=(e)=> {
@@ -45,13 +47,13 @@ export default function Signup() {
   }
 
   return (
-    <div>
+    <>
       <section className="vh-100">
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
               <div className="card text-white" style={{ borderRadius: "25px" }}>
-                <div className="card-body p-md-5">
+                <div className="card-body p-md-5 main">
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
@@ -143,7 +145,8 @@ export default function Signup() {
                           {/* <div className="d-flex flex-column justify-content-center mx-4 mb-3 mb-lg-4"> */}
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg me-3 auth"
+                            className="btn btn-lg me-3"
+                            style={{"backgroundColor":"#52d9156e"}}
                           >
                             Sign Up
                           </button>
@@ -151,7 +154,8 @@ export default function Signup() {
                           {/* <Link className="d-flex flex-column justify-content-center mx-4 mb-3 mb-lg-4"> */}
                           <Link
                             to="/login"
-                            className="btn btn-primary btn-lg auth"
+                            className="btn btn-lg"
+                            style={{"backgroundColor":"#52d9156e"}}
                           >
                             Login
                           </Link>
@@ -174,6 +178,6 @@ export default function Signup() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
