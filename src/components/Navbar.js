@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../styles/Navbar.css'
+import { Badge } from 'react-bootstrap';
+import { useCart } from './ContextReducer';
 
 export default function Navbar() {
 
@@ -9,6 +11,8 @@ export default function Navbar() {
     localStorage.removeItem("authToken");
     navigate("/login");
   }
+
+  let data = useCart();
 
 
 
@@ -31,7 +35,14 @@ export default function Navbar() {
           <Link className="btn authnav text-center" to="/signup">Sign Up</Link>
           </div>
           :
-          <div>
+          <div className='d-flex'>
+            <div className='me-3'><img alt='' src={require('../carts.png')} style={{"maxHeight": "40px"}} />
+            
+            {/* <Badge pill bg='success'>{ data.length}</Badge> */}
+            {data.length > 1 && (
+              <Badge pill bg='success'>{data.length}</Badge>
+            )}
+            </div>
             <div className='btn authnav' onClick={handleLogout}>Logout</div>
           </div>
         }
