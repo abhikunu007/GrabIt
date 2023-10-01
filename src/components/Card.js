@@ -12,10 +12,31 @@ export default function Card(props) {
     const priceRef = useRef();
 
     const handleAddToCart = async () => {
-        await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size
-    })
-    await console.log(data);
+        let food = []
+        for(const item of data) {
+            if(item.id === props.foodItem._id) {
+                food = item;
+                break;
+            }
+        }
+
+        if(food != []) {
+            if(food.size === size) {
+                await dispatch({ type: "UPDATE", id: props.foodItem._id, price: netPrice, qty: qty})
+                return;
+            }
+            else if(food.size !== size) {
+                await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size
+                })
+                return;
+        }
+        return;
     }
+
+        await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size
+    
+        })
+}
 
     let netPrice = qty * parseInt(options[size]);
 
