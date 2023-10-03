@@ -41,10 +41,12 @@ export default function Navbar(props) {
           </div>
           :
           <div className='d-flex'>
-            <div className='me-3' onClick={() => {setCartView(true)}}><img alt='' src={require('../carts.png')} style={{"maxHeight": "40px"}} />
+            <Link className="btn authnav text-center me-3" to="/myorder">My Order</Link>
+
+            <div className='me-2' onClick={() => {setCartView(true)}}><img alt='' src={require('../carts.png')} style={{"maxHeight": "40px"}} />
             
             {/* <Badge pill bg='success'>{ data.length}</Badge> */}
-            {data.length > 1 && (
+            {data.length >= 1 && (
               <Badge pill bg='success'>{data.length}</Badge>
             )}
             </div>

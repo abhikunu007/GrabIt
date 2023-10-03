@@ -21,7 +21,7 @@ export default function Cart() {
     const handleCheckOut = async () => {
       let userEmail = localStorage.getItem("userEmail");
       // console.log(data,localStorage.getItem("userEmail"),new Date())
-      let response = await fetch("http://localhost:5000/api/auth/orderData", {
+      let response = await fetch("http://localhost:5000/api/orderData", {
         // credentials: 'include',
         // Origin:"http://localhost:3000/login",
         method: 'POST',
@@ -34,7 +34,7 @@ export default function Cart() {
           order_date: new Date().toDateString()
         })
       });
-      console.log("JSON RESPONSE:::::", response.status)
+      // console.log("JSON RESPONSE:::::", response.status)
       if (response.status === 200) {
         dispatch({ type: "DROP" })
       }
@@ -44,7 +44,7 @@ export default function Cart() {
     return (
       <div>
   
-        {console.log(data)}
+        {/* {console.log(data)} */}
         <div className='container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md' >
           <table className='table table-hover '>
             <thead className=' text-success fs-4'>
@@ -54,6 +54,7 @@ export default function Cart() {
                 <th scope='col' >Quantity</th>
                 <th scope='col' >Option</th>
                 <th scope='col' >Amount</th>
+                <th scope='col' >Image</th>
                 <th scope='col' ></th>
               </tr>
             </thead>
@@ -65,6 +66,8 @@ export default function Cart() {
                   <td>{food.qty}</td>
                   <td>{food.size}</td>
                   <td>{food.price}</td>
+                  <td>{food.img}</td>
+                  
                   <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
               ))}
             </tbody>
