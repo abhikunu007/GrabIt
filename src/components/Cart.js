@@ -3,6 +3,9 @@ import React from "react";
 import { useCart, useDispatchCart } from "./ContextReducer";
 import Delete from '@mui/icons-material/Delete'
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 export default function Cart() {
     let data = useCart();
     let dispatch = useDispatchCart();
@@ -41,6 +44,11 @@ export default function Cart() {
     }
   
     let totalPrice = data.reduce((total, food) => total + food.price, 0)
+
+
+    const notify = () => toast("Thanks for ordering!");
+    const notifyDel = () => toast("Item dropped!");
+
     return (
       <div>
   
@@ -54,7 +62,6 @@ export default function Cart() {
                 <th scope='col' >Quantity</th>
                 <th scope='col' >Option</th>
                 <th scope='col' >Amount</th>
-                <th scope='col' >Image</th>
                 <th scope='col' ></th>
               </tr>
             </thead>
@@ -66,15 +73,17 @@ export default function Cart() {
                   <td>{food.qty}</td>
                   <td>{food.size}</td>
                   <td>{food.price}</td>
-                  <td>{food.img}</td>
                   
-                  <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
+                  <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }); notifyDel(); }} /></button>
+                  <ToastContainer toastStyle={{ backgroundColor: "red", color: "whitesmoke" }}/>
+                   </td></tr>
               ))}
             </tbody>
           </table>
           <div><h1 className='fs-2'>Total Price: {totalPrice}/-</h1></div>
           <div>
-            <button className='btn bg-success mt-5 ' onClick={handleCheckOut} > Check Out </button>
+            <button className='btn bg-success mt-5 ' onClick={() => { handleCheckOut(); notify();}} > Check Out </button>
+            <ToastContainer toastStyle={{ backgroundColor: "green", color: "whitesmoke" }}/>
           </div>
         </div>
   

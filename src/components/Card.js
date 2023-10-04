@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useCart, useDispatchCart } from './ContextReducer';
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 export default function Card(props) {
 
     let dispatch = useDispatchCart();
@@ -26,16 +29,18 @@ export default function Card(props) {
                 return;
             }
             else if(food.size !== size) {
-                await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size
+                await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size, img: props.foodItem.img
                 })
                 return;
         }
         return;
     }
 
-        await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size
+        await dispatch({type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: netPrice, qty: qty, size: size, img: props.foodItem.img
     
         })
+
+        
 }
 
     let netPrice = qty * parseInt(options[size]);
@@ -44,8 +49,13 @@ export default function Card(props) {
         setSize(priceRef.current.value)
     }, [])
 
+
+    const notify = () => toast("Item added successfully!");
+    
+
     return (
         <div>
+            
             <div className="card mt-3" style={{"width": "18rem", "maxHeight": "450px"}}>
                 <img className="card-img-top" src={props.foodItem.img} alt="..." style={{height: "200px", objectFit:"fill"}}/>
                     <div className="card-body">
@@ -70,7 +80,10 @@ export default function Card(props) {
                                Total: <span>&#8377;</span> {netPrice}
                             </div>
                             <hr />
-                            <div className='btn authnav' onClick={handleAddToCart}>ADD</div>
+                            <div className='btn authnav' onClick={() => { handleAddToCart(); notify();}} >ADD</div>
+                            <ToastContainer toastStyle={{ backgroundColor: "green", color: "whitesmoke" }}/>
+                            
+                          
                         </div>
                     </div>
             </div>
