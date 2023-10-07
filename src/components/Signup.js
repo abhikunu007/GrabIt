@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import '../styles/Signup.css'
 
 export default function Signup() {
@@ -28,7 +31,8 @@ export default function Signup() {
 
     if(!json.success)
     {
-        alert("Enter valid Credentials");
+        // alert("Enter valid Credentials");
+        toast.error("Enter valid Credentials!");
     }
     // setUser({
     //     name: "",
@@ -38,6 +42,7 @@ export default function Signup() {
     // })
     if(json.success)
     {
+     
       navigate("/login");
     }
   };
@@ -150,6 +155,7 @@ export default function Signup() {
                           >
                             Sign Up
                           </button>
+                          <ToastContainer />
                           {/* </div> */}
                           {/* <Link className="d-flex flex-column justify-content-center mx-4 mb-3 mb-lg-4"> */}
                           <Link
@@ -162,7 +168,16 @@ export default function Signup() {
                           {/* </Link> */}
                         </div>
                       </form>
+                      <div className="msg">
+                        <ul>
+                          <li>Name must be in alphabets only & length should be greater than 3</li>
+                          <li>Password's length must be greater than 7</li>
+                        </ul>
+                        
+                        
+                      </div>
                     </div>
+                    
                     <div className="col-md-10 col-lg-10 col-xl-7 d-flex align-items-center order-1 order-lg-2 p-md-5">
                       <img
                         src="https://w0.peakpx.com/wallpaper/563/793/HD-wallpaper-grab-me-now-driveronline-gocar-gojek-grabbike-grabcar-ojekonline-ojol-thumbnail.jpg"

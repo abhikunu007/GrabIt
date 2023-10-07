@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import '../styles/Login.css'
 
 export default function Login() {
@@ -29,7 +33,8 @@ export default function Login() {
 
     if(!json.success)
     {
-        alert("Enter valid Credentials");
+      
+      toast.error("Invalid Credentials!");
     }
     // setUser({
     //     name: "",
@@ -39,6 +44,7 @@ export default function Login() {
     // })
     if(json.success)
     {
+      localStorage.setItem("userEmail", user.email);
       localStorage.setItem("authToken", json.authToken);
       console.log(localStorage.getItem("authToken"));
       navigate("/");
@@ -123,9 +129,11 @@ export default function Login() {
                             to="/signup"
                             className="btn btn-lg"
                             style={{"backgroundColor":"#52d9156e"}}
+                            
                           >
                             Sign Up
                           </Link>
+                          <ToastContainer />
                           {/* </Link> */}
                         </div>
                       </form>
