@@ -1,14 +1,20 @@
 
-.navauth{
+/* .navauth{
     display: flex;
     margin-left: 70rem;
-}
+} */
 
-.auth{
-    border-radius: 0.5rem;
+.authnav{
+    /* border-radius: 0.5rem; */
     background: linear-gradient(270deg, rgba(9,121,24,1) 31%, rgba(156,223,45,1) 100%);
     margin-left: 1rem;
-    width: 5rem;
+
+     /*width: 5rem;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
 }
