@@ -7,7 +7,7 @@ const CartDispatchContext = createContext();
 const reducer = (state,action) => {
     switch(action.type) {
         case "ADD":
-            return [...state, {id: action.id, name: action.name, img: action.img, qty: action.qty, size: action.size, price: action.price, img: action.img}]
+            return [...state, {id: action.id, name: action.name, img: action.img, qty: action.qty, size: action.size, price: action.price}]
 
         case "REMOVE" :
             let newArr = [...state]
@@ -18,11 +18,20 @@ const reducer = (state,action) => {
             let arr = [...state]
             arr.find((food, index) => {
               if(food.id === action.id) {
-                arr[index] = {...food, qty: parseInt(action.qty) + food.qty, price: action.price + food.price}
-              }  
+                // console.log(food.qty);
+                // console.log(action.qty);
+                // console.log((parseInt(action.qty) + parseInt(food.qty)));
+                arr[index] = {...food, qty: (parseInt(action.qty) + parseInt(food.qty)), price: action.price + food.price}
+                // console.log(arr);
+              }
+                
               return arr;
             })
             return arr;
+
+            
+
+
         case "DROP":
             let empArray = []
             return empArray
