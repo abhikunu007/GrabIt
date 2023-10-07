@@ -46,8 +46,8 @@ export default function Cart() {
     let totalPrice = data.reduce((total, food) => total + food.price, 0)
 
 
-    const notify = () => toast("Thanks for ordering!");
-    const notifyDel = () => toast("Item dropped!");
+    const notify = () => toast.success("Thanks for ordering!");
+    const notifyDel = () => toast.error("Item dropped!");
 
     return (
       <div>
@@ -75,7 +75,7 @@ export default function Cart() {
                   <td>{food.price}</td>
                   
                   <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }); notifyDel(); }} /></button>
-                  <ToastContainer toastStyle={{ backgroundColor: "red", color: "whitesmoke" }}/>
+                  <ToastContainer/>
                    </td></tr>
               ))}
             </tbody>
@@ -83,7 +83,7 @@ export default function Cart() {
           <div><h1 className='fs-2'>Total Price: {totalPrice}/-</h1></div>
           <div>
             <button className='btn bg-success mt-5 ' onClick={() => { handleCheckOut(); notify();}} > Check Out </button>
-            <ToastContainer toastStyle={{ backgroundColor: "green", color: "whitesmoke" }}/>
+            <ToastContainer />
           </div>
         </div>
   
