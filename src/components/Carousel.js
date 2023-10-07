@@ -13,13 +13,13 @@ export default function Carousel() {
   </form>
     </div>
     <div className="carousel-item active">
-      <img className="d-block w-100" style={{filter:"brightness(30%"}} src="https://source.unsplash.com/random/900×700/?pizza" alt="First slide"/>
+      <img className="d-block w-100" style={{filter:"brightness(30%"}} src="https://source.unsplash.com/random/300×300/?pizza" alt="First slide"/>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" style={{filter:"brightness(30%"}} src="https://source.unsplash.com/random/900×700/?chicken" alt="Second slide"/>
+      <img className="d-block w-100" style={{filter:"brightness(30%"}} src="https://source.unsplash.com/random/300×300/?chicken" alt="Second slide"/>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" style={{filter:"brightness(30%"}} src="https://source.unsplash.com/random/900×700/?burger" security="None" alt="Third slide"/>
+      <img className="d-block w-100" style={{filter:"brightness(30%"}} src="https://source.unsplash.com/random/300×300/?burger" security="None" alt="Third slide"/>
     </div>
   </div>
   <Link className="carousel-control-prev" to="#carouselExampleControls" role="button" data-slide="prev">
