@@ -50,7 +50,7 @@ export default function Card(props) {
     }, [])
 
 
-    const notify = () => toast("Item added successfully!");
+    const notify = () => toast.success("Item added successfully!");
     
 
     return (
@@ -81,7 +81,7 @@ export default function Card(props) {
                             </div>
                             <hr />
                             <div className='btn authnav' onClick={() => { handleAddToCart(); notify();}} >ADD</div>
-                            <ToastContainer toastStyle={{ backgroundColor: "green", color: "whitesmoke" }}/>
+                            <ToastContainer />
                             
                           
                         </div>
