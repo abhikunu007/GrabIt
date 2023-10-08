@@ -35,7 +35,7 @@ An online food delivery app. Using this app you can order your favourite food.
 
 ![Signup](./screenshots/Screenshot%202023-10-08%20160431.png)
 
-![Home](../grabit/screenshots/Screenshot%202023-10-08%20155840.png)
+![Home](./screenshots/Screenshot%202023-10-08%20155840.png)
 
 ![My Order](./screenshots/Screenshot%202023-10-08%20155930.png)
 
