@@ -31,17 +31,19 @@ An online food delivery app. Using this app you can order your favourite food.
 
 ## Screenshots
 
-![Alt text](<Screenshot 2023-10-08 160405.png>)
+![Login](./screenshots/Screenshot%202023-10-08%20160405.png)
 
-![Alt text](<Screenshot 2023-10-08 160431.png>)
+![Signup](./screenshots/Screenshot%202023-10-08%20160431.png)
 
-![Alt text](<Screenshot 2023-10-08 155840.png>)
+![Home](../grabit/screenshots/Screenshot%202023-10-08%20155840.png)
 
-![Alt text](<Screenshot 2023-10-08 155930.png>)
+![My Order](./screenshots/Screenshot%202023-10-08%20155930.png)
 
-![Alt text](<Screenshot 2023-10-08 155904.png>)
+![Home](./screenshots/Screenshot%202023-10-08%20155904.png)
 
-![Alt text](<Screenshot 2023-10-08 160339.png>)
+
+![Cart](./screenshots/Screenshot%202023-10-08%20160339.png)
+
 
 
 
