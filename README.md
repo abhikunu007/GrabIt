@@ -1,3 +1,106 @@
+
+
+# GrabIt
+
+An online food delivery app. Using this app you can order your favourite food.
+
+
+## Features
+
+ - Shows list of food items according to their category.
+ - You can add food to your cart.
+ - You can checkout your add to cart items.
+ - You can search food according to you using search filter
+ - You can check your food ordered history which you have ordered.
+ - You can delete the items added in your cart if you wish.
+ - Used JWT authentication to make it secure and provide good experience of login or logout for users.
+ - Password entered is stored in database in encrypted form to ensure more security.
+ - Used react toast notifications to give more friendly user experience.
+ 
+
+
+ 
+## Tech Stack
+
+**Client:** React, JSX, HTML, CSS, Javascript, Bootstrap
+
+**Server:** Node, Express, MongoDB, Mongoose, Json Web Tokens(JWT), Atlas, Express-validator, Bcrypt.js,
+
+
+
+
+## Screenshots
+
+![Alt text](<Screenshot 2023-10-08 160405.png>)
+
+![Alt text](<Screenshot 2023-10-08 160431.png>)
+
+![Alt text](<Screenshot 2023-10-08 155840.png>)
+
+![Alt text](<Screenshot 2023-10-08 155930.png>)
+
+![Alt text](<Screenshot 2023-10-08 155904.png>)
+
+![Alt text](<Screenshot 2023-10-08 160339.png>)
+
+
+
+## Deployment
+
+To see this project live click below
+ Link:- 
+
+
+## Author
+
+- [@Abhishek Kumar](https://www.github.com/abhikunu007)
+
+
+
+## Git Repository Link
+- Link :- https://github.com/abhikunu007/GrabIt
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/abhikunu007/GrabIt.git
+```
+
+Go to the project directory
+
+```bash
+  cd grabit
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+
+## Support
+
+For support, email abhishekkumaras007@gmail.com
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at abhishekkumaras007@gmail.com
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
