@@ -24,7 +24,7 @@ An online food delivery app. Using this app you can order your favourite food.
 
 **Client:** React, JSX, HTML, CSS, Javascript, Bootstrap
 
-**Server:** Node, Express, MongoDB, Mongoose, Json Web Tokens(JWT), Atlas, Express-validator, Bcrypt.js,
+**Server:** Node, Express, MongoDB, Mongoose, Json Web Tokens(JWT), Atlas, Express-Validator, Bcrypt.js,
 
 
 
